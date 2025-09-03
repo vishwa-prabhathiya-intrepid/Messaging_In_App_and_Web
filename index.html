@@ -19,6 +19,22 @@
 
           //embeddedservice_bootstrap.settings.chatButtonPosition = "95%,5%";
 
+          window.addEventListener("onEmbeddedMessagingReady", e => {
+            //log event
+            console.log("onEmbeddedMessagingReady event triggered");
+            console.log('Referring_Site: ' +window.location.href);
+            console.log('Referring_Site: ' + window.location);
+            console.log('Referring_Site: ', window.parent);
+            console.log('Referring_Site: ', document.referrer);
+            console.log('Referring_Site: ', document.location);
+                  
+            //Set invisible prechat field
+            embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
+                "Referring_New_Site" : window.location.href
+            });
+            console.log("onEmbeddedMessagingReady event triggered END");
+          });
+
           embeddedservice_bootstrap.init(
             "00D9p000007Lfs9",
             "Vishwa_Embedded",
@@ -32,20 +48,6 @@
           console.error("Error loading Embedded Messaging: ", err);
         }
       }
-      window.addEventListener("onEmbeddedMessagingReady", e => {
-          //log event
-          console.log("onEmbeddedMessagingReady event triggered");
-          console.log('Referring_Site: ' + window.location);
-          console.log('Referring_Site: ', window.parent);
-          console.log('Referring_Site: ', document.referrer);
-          console.log('Referring_Site: ', document.location);
-                
-          //Set invisible prechat field
-          embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
-              "Referring_New_Site" : window.location.href
-          });
-          console.log("onEmbeddedMessagingReady event triggered END");
-      });
     </script>
     <script
       type="text/javascript"
