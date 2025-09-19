@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, minimum-scale=1"
+  />
+  <head>
+    <title>External Live Agent</title>
+  </head>
+
+  <body>
+    <h1>TEST</h1>
+
+    <script type="text/javascript">
+      function initEmbeddedMessaging() {
+        try {
+          embeddedservice_bootstrap.settings.language = "en_US"; // For example, enter 'en' or 'en-US'
+
+          //embeddedservice_bootstrap.settings.chatButtonPosition = "95%,5%";
+          //embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"Referring_Site" : window.location.href})
+
+          window.addEventListener("onEmbeddedMessagingReady", e => {
+            console.log('its running...')
+            embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"Referring_Site" : window.location.href});
+          });
+
+          embeddedservice_bootstrap.init(
+            "00D9p000007Lfs9",
+            "Vishwa_Embedded",
+            "https://intrepidgroup--vishwamsg.sandbox.my.site.com/ESWVishwaEmbedded1751006710726",
+            {
+              scrt2URL:
+                "https://intrepidgroup--vishwamsg.sandbox.my.salesforce-scrt.com",
+            }
+          );
+        } catch (err) {
+          console.error("Error loading Embedded Messaging: ", err);
+        }
+      }
+    </script>
+    <script
+      type="text/javascript"
+      src="https://intrepidgroup--vishwamsg.sandbox.my.site.com/ESWVishwaEmbedded1751006710726/assets/js/bootstrap.min.js"
+      onload="initEmbeddedMessaging()"
+    ></script>
+  </body>
+</html>
