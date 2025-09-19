@@ -21,6 +21,7 @@
           //embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"Referring_Site" : window.location.href})
 
           window.addEventListener("onEmbeddedMessagingReady", e => {
+            console.log('its running...')
             embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"Referring_Site" : window.location.href});
           });
 
