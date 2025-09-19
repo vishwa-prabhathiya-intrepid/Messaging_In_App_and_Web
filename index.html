@@ -20,10 +20,7 @@
           //embeddedservice_bootstrap.settings.chatButtonPosition = "95%,5%";
           //embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"Referring_Site" : window.location.href})
 
-          window.addEventListener("onEmbeddedMessagingReady", e => {
-            console.log('its running...')
-            embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"Referring_Site" : window.location.href});
-          });
+          
 
           embeddedservice_bootstrap.init(
             "00D9p000007Lfs9",
@@ -38,6 +35,10 @@
           console.error("Error loading Embedded Messaging: ", err);
         }
       }
+      window.addEventListener("onEmbeddedMessagingReady", e => {
+        console.log('its running...')
+        embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"Referring_Site" : window.location.href});
+      });
     </script>
     <script
       type="text/javascript"
