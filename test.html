@@ -19,7 +19,7 @@
           //embeddedservice_bootstrap.settings.chatButtonPosition = "95%,5%";
           //embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"Referring_Site" : window.location.href})
 
-          window.addEventListener("onEmbeddedMessagingPreChatSubmitted", e => {
+          window.addEventListener("onEmbeddedMessagingReady", e => {
             console.log('its running test...')
             embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"Referring_Site" : window.location.href});
           });
