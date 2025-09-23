@@ -18,8 +18,12 @@
           embeddedservice_bootstrap.settings.language = "en_US"; // For example, enter 'en' or 'en-US'
 
           //embeddedservice_bootstrap.settings.chatButtonPosition = "95%,5%";
-          window.addEventListener("onEmbeddedMessagingReady", e => {
-            embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"Referring_Site" : "http://chart.apis.google.com/chart?chs=500x500&chma=0,0,100,100&cht=p&chco=FF0000%2CFFFF00%7CFF8000%2C00FF00%7C00FF00%2C0000FF&chd=t%3A122%2C42%2C17%2C10%2C8%2C7%2C7%2C7%2C7%2C6%2C6%2C6%2C6%2C5%2C5&chl=122%7C42%7C17%7C10%"})
+            window.addEventListener("onEmbeddedMessagingReady", e => {
+            let referringSite = "http://chart.apis.google.com/chart?chs=500x500&chma=0,0,100,100&cht=p&chco=FF0000%2CFFFF00%7CFF8000%2C00FF00%7C00FF00%2C0000FF&chd=t%3A122%2C42%2C17%2C10%2C8%2C7%2C7%2C7%2C7%2C6%2C6%2C6%2C6%2C5%2C5&chl=122%7C42%7C17%7C10%";
+            if (referringSite.length > 200) {
+              referringSite = referringSite.substring(0, 200);
+            }
+            embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"Referring_Site" : referringSite});
           });
 
           
