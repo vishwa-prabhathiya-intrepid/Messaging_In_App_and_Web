@@ -54,9 +54,11 @@
         console.log('its running test...')
         embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"Referring_Site" : window.location.href});
       });
-      document.addEventListener('launchMIAWChat', e => {
-        console.log('LAUNCH chat clicked.')
-        embeddedservice_bootstrap.utilAPI.launchChat();
+      window.addEventListener('message', event => {
+        if(event?.data?.type === 'launchMIAWChat') {
+          console.log('LAUNCH chat clicked.')
+          embeddedservice_bootstrap.utilAPI.launchChat();
+        }
       });
     </script>
     <script
