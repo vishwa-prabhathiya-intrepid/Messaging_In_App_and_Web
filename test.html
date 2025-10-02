@@ -27,7 +27,8 @@
 
     <script type="text/javascript">
       function fireDownloadEvent() {
-          window.parent.postMessage({ type: 'launchMIAWChat' }, '*');
+        console.log('clicked....')
+        embeddedservice_bootstrap.utilAPI.launchChat();
       }
       function initEmbeddedMessaging() {
         try {
