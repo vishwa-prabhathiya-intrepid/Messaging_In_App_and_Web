@@ -6,6 +6,12 @@
   />
   <head>
     <title>External Live Agent</title>
+    <script>
+      window.addEventListener('launchMIAWChat', e => {
+        console.log('LAUNCH chat clicked.')
+        embeddedservice_bootstrap.utilAPI.launchChat();
+      });
+    </script>
   </head>
 
   <body>
@@ -37,12 +43,6 @@
       window.addEventListener("onEmbeddedMessagingReady", e => {
         console.log('its running test...')
         embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"Referring_Site" : window.location.href});
-      });
-      
-      
-      window.addEventListener('launchMIAWChat', e => {
-        console.log('LAUNCH chat clicked.')
-        embeddedservice_bootstrap.utilAPI.launchChat();
       });
     </script>
     <script
