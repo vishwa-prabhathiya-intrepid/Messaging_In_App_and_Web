@@ -28,7 +28,11 @@
     <script type="text/javascript">
       function fireDownloadEvent() {
         console.log('clicked....')
-        embeddedservice_bootstrap.utilAPI.launchChat();
+        document.dispatchEvent(
+            new CustomEvent(
+                "launchMIAWChatEvent"
+            )
+        );
       }
       function initEmbeddedMessaging() {
         try {
