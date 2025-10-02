@@ -15,11 +15,6 @@
     <br />
     <br />
     <button onclick="fireDownloadEvent()">Launch Chat</button>
-    <script>
-      document.addEventListener("launchMIAWChatEvent", function() {
-      console.log("launchMIAWChatEvent captured!");
-      });
-    </script>
 
 
 
@@ -27,9 +22,9 @@
     <script type="text/javascript">
       function fireDownloadEvent() {
         console.log('clicked....')
-        document.dispatchEvent(
+        window.dispatchEvent(
             new CustomEvent(
-                "launchMIAWChatEvent"
+                "launchMIAWChat"
             )
         );
       }
