@@ -55,8 +55,7 @@
         embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"Referring_Site" : window.location.href});
       });
       window.addEventListener('message', event => {
-        if(event?.data?.type === 'launchMIAWChat') {
-          console.log('LAUNCH chat clicked.')
+        if(event?.data?.type === 'launchIntrepidChat') {
           embeddedservice_bootstrap.utilAPI.launchChat();
         }
       });
