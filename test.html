@@ -16,8 +16,19 @@
 
   <body>
     <h1>TEST</h1>
+    <br />
+    <br />
+    <br />
+    <br />
+    <button onclick="fireDownloadEvent()">Launch Chat</button>
+
+
+
 
     <script type="text/javascript">
+      function fireDownloadEvent() {
+          window.parent.postMessage({ type: 'launchMIAWChat' }, '*');
+      }
       function initEmbeddedMessaging() {
         try {
           embeddedservice_bootstrap.settings.language = "en_US"; // For example, enter 'en' or 'en-US'
