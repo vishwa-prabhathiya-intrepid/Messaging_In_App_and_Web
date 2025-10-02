@@ -36,19 +36,13 @@
       }
       window.addEventListener("onEmbeddedMessagingReady", e => {
         console.log('its running test...')
-        embeddedservice_bootstrap.prechatAPI.setVisiblePrechatFields({
-          // List the pre-chat field names with the value and whether
-          // it's editable in the pre-chat form.
-          "_firstName": {
-            "value": "Jane",
-            "isEditableByEndUser": false
-          },
-          "_lastName": {
-            "value": "Iyren",
-            "isEditableByEndUser": false
-          }
-        });
         embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"Referring_Site" : window.location.href});
+      });
+      
+      
+      document.addEventListener('launchMIAWChat', e => {
+        console.log('LAUNCH chat clicked.')
+        embeddedservice_bootstrap.utilAPI.launchChat();
       });
     </script>
     <script
