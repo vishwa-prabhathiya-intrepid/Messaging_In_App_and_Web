@@ -22,11 +22,8 @@
     <script type="text/javascript">
       function fireDownloadEvent() {
         console.log('clicked....')
-        window.dispatchEvent(
-            new CustomEvent(
-                "launchMIAWChat"
-            )
-        );
+        window.parent.postMessage({ type: "launchIntrepidChat" }, "*");
+        //window.dispatchEvent(new CustomEvent("launchMIAWChat"));
       }
       function initEmbeddedMessaging() {
         try {
@@ -55,10 +52,10 @@
         embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"Referring_Site" : window.location.href});
       });
       window.addEventListener('message', event => {
-        if(event?.data?.type === 'launchIntrepidChat') {
-          embeddedservice_bootstrap.utilAPI.launchChat();
-        }
-      });
+    if(event?.data?.type === 'launchIntrepidChat') {
+        embeddedservice_bootstrap.utilAPI.launchChat();
+    }
+});
     </script>
     <script
       type="text/javascript"
