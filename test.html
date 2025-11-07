@@ -21,7 +21,6 @@
 
     <script type="text/javascript">
       function fireDownloadEvent() {
-        console.log('clicked....')
         window.parent.postMessage({ type: "launchIntrepidChat" }, "*");
         //window.dispatchEvent(new CustomEvent("launchMIAWChat"));
       }
@@ -35,12 +34,11 @@
           
 
           embeddedservice_bootstrap.init(
-            "00D9p000007Lfs9",
-            "Vishwa_Embedded",
-            "https://intrepidgroup--vishwamsg.sandbox.my.site.com/ESWVishwaEmbedded1751006710726",
+          '00D9p000009UmQ6',
+          'Vishwa_Channel',
+          'https://intrepidgroup--vishwamsg.sandbox.my.site.com/ESWVishwaChannel1762496597135',
             {
-              scrt2URL:
-                "https://intrepidgroup--vishwamsg.sandbox.my.salesforce-scrt.com",
+              scrt2URL: 'https://intrepidgroup--vishwamsg.sandbox.my.salesforce-scrt.com'
             }
           );
         } catch (err) {
@@ -57,10 +55,6 @@
     }
 });
     </script>
-    <script
-      type="text/javascript"
-      src="https://intrepidgroup--vishwamsg.sandbox.my.site.com/ESWVishwaEmbedded1751006710726/assets/js/bootstrap.min.js"
-      onload="initEmbeddedMessaging()"
-    ></script>
+    <script type='text/javascript' src='https://intrepidgroup--vishwamsg.sandbox.my.site.com/ESWVishwaChannel1762496597135/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
   </body>
 </html>
