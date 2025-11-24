@@ -15,10 +15,8 @@
     <iframe id="myIframe" src="https://intrepidgroup--vishwamsg.sandbox.my.site.com/newagency/survey/runtimeApp?invitationId=0Ki9p00000081tN&surveyName=sample_survey&UUID=6831949a-c657-4be1-909c-27d7a5254e40"></iframe>
 
     <script type="text/javascript">
-      var iframe = document.getElementById("myIframe");
-      // This works best if the content is from the same domain
-      iframe.height = iframe.contentWindow.document.body.scrollHeight + "px";
-      iframe.width = iframe.contentWindow.document.body.scrollWidth + "px";
+      document.getElementById("myIframe").width = window.innerWidth + "px";
+      document.getElementById("myIframe").height = window.innerHeight + "px";
 
       function initEmbeddedMessaging() {
         try {
